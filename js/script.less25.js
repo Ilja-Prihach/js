@@ -63,3 +63,58 @@ logger();
 
 const calcul = (a, b) => a + b;
 
+
+
+//Функция для подсчета курсов валют
+const usdCurr = 3.3;
+const eurCurr = 3.48;
+
+function convert(amount, curr) {
+    console.log(curr * amount);
+}
+
+convert(500, usdCurr);
+convert(500, eurCurr);
+
+
+//Про важность return
+const usdtCurr = 3.3;
+const discount = 0.9;
+
+function converter (amount, curr) {
+    return curr * amount;  //Возвращает результат
+}
+
+function promotion(result) {
+    console.log(result * discount);
+}
+
+//promotion(converter(500, usdtCurr));
+//или
+const res = converter(500, usdtCurr);
+promotion(res);
+
+
+
+
+function test() {
+    for (let i = 0; i<5; i++) {
+        console.log(i);
+        if (i === 3) return //После достижения i===3 функция прекратит выполнение
+    }
+    console.log('Done'); //не выведет, так как после return выполнения не будет
+}
+test();
+
+
+
+//Функция всегда что-то возвращает, если не указан return
+// Всегда возвращает undefiend
+function doNothing() {};
+console.log(doNothing() === undefined);
+//В консоль выведет true
+
+
+
+
+
